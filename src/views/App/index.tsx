@@ -1,10 +1,10 @@
 import React from 'react';
 
 import styles from './index.module.scss';
-import {useAppDispatch, useAppSelector} from "../../redux/store";
-import {addToDo, deleteToDo, editToDo} from "../../redux/toDoSlice";
-import {InputPlus} from "../components/InputPlus";
-import {InputTask} from "../components/InputTask";
+import { useAppDispatch, useAppSelector } from "../../store/store";
+import { addToDo, deleteToDo, editToDo } from "../../store/toDoSlice/toDoSlice";
+import { InputPlus } from "../../components/InputPlus";
+import { InputTask  } from "../../components/InputTask";
 
 export const App: React.FC = () => {
     const toDoList = useAppSelector((state) => state.toDo);

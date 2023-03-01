@@ -26,6 +26,7 @@
   }
 
   &EditTitle {
+    display: inline-block;
     font: 1rem/1em 'Roboto', sans-serif;
     border: none;
     padding: 5px;
@@ -47,14 +48,14 @@
   }
 
   &Edit {
-    background-image: url("src/views/components/InputPlus/img/edit.svg");
+    background-image: url("src/components/InputPlus/assets/icons/edit.svg");
   }
 
   &Remove {
-    background-image: url("src/views/components/InputPlus/img/trash.svg");
+    background-image: url("src/components/InputPlus/assets/icons/trash.svg");
   }
 
   &Save {
-    background-image: url("src/views/components/InputPlus/img/check.svg");
+    background-image: url("src/components/InputPlus/assets/icons/check.svg");
   }
 }

@@ -2,10 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import {App} from './views/App'
 import {Provider} from "react-redux";
-import store from "./redux/store";
+import store from "./store/store";
 
-import './views/styles/reset.scss';
-import './views/styles/common.scss';
+import './styles/reset.scss';
+import './styles/common.scss';
 
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(

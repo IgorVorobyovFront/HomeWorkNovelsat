@@ -1,5 +1,5 @@
-import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {generateId} from "../data/helpers";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { generateId } from "../../system/helpers";
 
 const toDoList: { id: string, title: string }[] = [];
 

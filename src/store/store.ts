@@ -1,7 +1,7 @@
 import {configureStore, Middleware} from '@reduxjs/toolkit';
 import {TypedUseSelectorHook, useDispatch, useSelector} from 'react-redux';
 
-import toDoReducer from './toDoSlice';
+import toDoReducer from './toDoSlice/toDoSlice';
 
 const localStorageMiddleware: Middleware = ({getState}) => {
     return next => action => {
