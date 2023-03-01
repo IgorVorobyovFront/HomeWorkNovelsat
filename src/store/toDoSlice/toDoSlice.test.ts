@@ -1,6 +1,8 @@
 import { configureStore, EnhancedStore } from '@reduxjs/toolkit';
 import toDoReducer, { addToDo, deleteToDo, editToDo } from './toDoSlice';
 
+
+
 describe('toDo feature', () => {
     let store: EnhancedStore;
 
@@ -16,19 +18,19 @@ describe('toDo feature', () => {
     });
 
     test('should delete a todo item', () => {
-        const toDoItem = { id: '1', title: 'Buy milk' };
-        store.dispatch(addToDo({ title: toDoItem.title }));
-        store.dispatch(deleteToDo({ id: toDoItem.id }));
+        const title = 'Buy chocolate';
+        store.dispatch(addToDo({ title }));
         const state = store.getState();
-        expect(state).not.toContainEqual(toDoItem);
+        store.dispatch(deleteToDo({ id: state[0].id }));
+        expect(store.getState()).toEqual([]);
     });
 
     test('should edit a todo item', () => {
-        const toDoItem = { id: '1', title: 'Buy milk' };
-        store.dispatch(addToDo({ title: toDoItem.title }));
+        const title = 'Buy water';
+        store.dispatch(addToDo({ title }));
         const newTitle = 'Buy bread';
-        store.dispatch(editToDo({ id: toDoItem.id, title: newTitle }));
         const state = store.getState();
-        expect(state).toEqual([{ id: toDoItem.id, title: newTitle }]);
+        store.dispatch(editToDo({ id: state[0].id, title: newTitle }));
+        expect(store.getState()).toContainEqual({ id: expect.any(String), title: newTitle });
     });
 });
